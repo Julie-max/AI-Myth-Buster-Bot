@@ -178,7 +178,7 @@ Feel free to submit a pull request if you want to improve the project!
 ---
 
 ## 📧 Contact
-For any inquiries, reach out to **[Your Email]** or open an issue on GitHub.
+For any inquiries, reach out to **cbriantjuian@gmail.com** or open an issue on GitHub.
 
 ---
 
