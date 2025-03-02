@@ -1,6 +1,10 @@
 # AI Myth Buster
 
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg) ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+
 **AI Myth Buster** is a project that uses a fine-tuned T5-base transformer model to debunk common myths about artificial intelligence. The project expands a set of curated myth–debunk pairs into a large, diverse dataset, applies curriculum learning, and deploys an interactive web interface using Gradio.
+
+---
 
 ## Table of Contents
 - [Overview](#overview)
@@ -13,8 +17,12 @@
 - [Future Work](#future-work)
 - [License](#license)
 
+---
+
 ## Overview
 This project demonstrates how to transform common AI myths into fact-based corrections using a text-to-text transformer (T5-base). The model is fine-tuned on an expanded dataset of 1000 myth–debunk pairs with a curriculum learning approach—starting with "Simple" examples and then introducing "Complex" ones.
+
+---
 
 ## Dataset
 - **Base Data:**  
@@ -25,6 +33,8 @@ This project demonstrates how to transform common AI myths into fact-based corre
   Each example is assigned a `"Complexity"` label ("Simple" for the first 500 and "Complex" for the next 500) based on a heuristic or, optionally, using readability scores (e.g., Flesch Reading Ease).
 
 The expanded dataset is saved as `ai_myths_expanded_1000.json` (and further processed to include complexity labels in `ai_myths_expanded_1000_complexity.json`).
+
+---
 
 ## Model and Training
 - **Model:**  
@@ -43,6 +53,8 @@ The expanded dataset is saved as `ai_myths_expanded_1000.json` (and further proc
   
   Training is managed using Hugging Face’s Trainer API.
 
+---
+
 ## Inference
 The inference pipeline uses a **hybrid approach**:
 - **Beam Search (Deterministic):**  
@@ -52,11 +64,15 @@ The inference pipeline uses a **hybrid approach**:
 - **Post-Processing:**  
   The system removes any unwanted prompt artifacts and uses a default response if necessary.
 
+---
+
 ## Deployment
 The project uses Gradio to create a simple web interface:
 - A single text input for entering a myth.
 - A text output displaying the debunked fact.
 - You can launch the interface directly in Colab or deploy it to Hugging Face Spaces for a public demo.
+
+---
 
 ## Installation
 
@@ -73,37 +89,48 @@ The project uses Gradio to create a simple web interface:
     Since GitHub has a 100MB file size limit, we have stored the trained model on Google Drive.
     - Download the model from: [Google Drive Link](https://drive.google.com/file/d/1-DaOqVK9dvDQgLzCXcmRkLMmcNtjASLm/view?usp=drive_link)
     -Extract the model into the models/ directory:
-        AI-Myth-Buster-Bot/
-        ├── models/
-        │   ├── t5_myth_buster/
-        │   │   ├── config.json
-        │   │   ├── generation_config.json
-        │   │   ├── model.safetensors
-        │   │   ├── tokenizer_config.json
-        │   │   ├── spiece.model
-        │   │   ├── special_tokens_map.json
-        │   │   ├── added_tokens.json
+    ```
+    AI-Myth-Buster/
+    ├── models/
+    │   ├── t5_myth_buster/
+    │   │   ├── config.json
+    │   │   ├── generation_config.json
+    │   │   ├── model.safetensors
+    │   │   ├── tokenizer_config.json
+    │   │   ├── spiece.model
+    │   │   ├── special_tokens_map.json
+    │   │   ├── added_tokens.json
+    ```
+---
 
 # Project Structure
-AI-Myth-Buster-Bot/
-├── data/                     # Processed dataset files  
-│   ├── ai_myths_expanded_1000.json  
-│   ├── ai_myths_expanded_1000_complexity.json  
-├── models/                   # Pre-trained T5 model (downloaded from Google Drive)  
-│   ├── t5_myth_buster/  
-├── notebooks/                # Jupyter notebooks for development  
-│   ├── 01_data_preprocessing.ipynb  
-│   ├── 02_fine_tuning.ipynb  
-│   ├── 03_inference_testing.ipynb  
-│   ├── 04_deployment.ipynb  
-├── src/                      # Python scripts for running tasks  
-│   ├── data_preprocessing.py  
-│   ├── train.py  
-│   ├── inference.py  
-│   ├── deploy.py  
-├── requirements.txt          # Required dependencies  
-├── LICENSE                   # MIT License  
-├── README.md                 # Project documentation  
+```
+AI-Myth-Buster/
+├── data/                      # Processed dataset files
+│   ├── ai_myths_expanded_1000.json
+│   ├── ai_myths_expanded_1000_complexity.json
+│
+├── models/                    # Pre-trained T5 model (downloaded from Google Drive)
+│   ├── t5_myth_buster/
+│
+├── notebooks/                 # Jupyter notebooks for development
+│   ├── 01_data_preprocessing.ipynb
+│   ├── 02_fine_tuning.ipynb
+│   ├── 03_inference_testing.ipynb
+│   ├── 04_deployment.ipynb
+│
+├── src/                       # Python scripts for running tasks
+│   ├── data_preprocessing.py
+│   ├── train.py
+│   ├── inference.py
+│   ├── deploy.py
+│
+├── requirements.txt            # Required dependencies
+├── LICENSE                     # MIT License
+├── README.md                   # Project documentation
+```
+
+---
 
 # Usage
 1. **Data Expansion**
@@ -131,11 +158,28 @@ AI-Myth-Buster-Bot/
     ```
     or run `notebooks/04_deployment.ipynb`.
 
+---
+
 # Future Improvements
 - Improve debunking of complex myths (e.g., humor, stock predictions).
 - Increase dataset size for better generalization.
 - Explore retrieval-augmented generation (RAG) for fact-checking.
 
+---
+
 # License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
+---
+
+## 🤝 Contributing
+Feel free to submit a pull request if you want to improve the project!
+
+---
+
+## 📧 Contact
+For any inquiries, reach out to **[Your Email]** or open an issue on GitHub.
+
+---
+
+### 🌟 If you like this project, give it a ⭐ on GitHub!
